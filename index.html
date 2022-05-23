@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>What's the Weather?</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="page">
+        <span id="clock" title="12-hour format">CLOCK</span>
+        <blockquote id="timeEvent"></blockquote>
+      </div>
+      <div id="left">
+        <div class="left-column" id="feels-like">
+          <p>Feels like<br />- °<span>C</span></p>
+        </div>
+        <div class="linebreak"></div>
+        <div class="left-column" id="temp-min">
+          <p>Minimum temp.<br />- °<span>C</span></p>
+        </div>
+        <div class="linebreak"></div>
+        <div class="left-column" id="temp-max">
+          <p>Maximum temp.<br />- °<span>C</span></p>
+        </div>
+        <div class="linebreak"></div>
+        <div class="left-column" id="sunrise">
+          <p>Sunrise<br /></p>
+        </div>
+      </div>
+      <div class="app-title">
+        <h3>WEATHER</h3>
+        <div class="notification"></div>
+        <div class="weather-container">
+          <div class="weather-icon">
+            <img src="icons/unknown.png" alt="" />
+          </div>
+          <div
+            class="temperature-value"
+            title="Click to obtain the temperature in Fahrenheit"
+          >
+            <p>- °<span>C</span></p>
+          </div>
+          <div class="temperature-description">
+            <p></p>
+          </div>
+          <div
+            class="location"
+            title="Weather of the nearest location available is displayed"
+          >
+            <p></p>
+          </div>
+        </div>
+        <div id="bottom">
+          <div class="bottom-row" id="pressure">
+            <p>Pressure<br />- <span>hPa</span></p>
+          </div>
+        </div>
+      </div>
+      <div id="right">
+        <div class="right-column" id="humidity">
+          <p>Humidity<br />- <span>%</span></p>
+        </div>
+        <div class="linebreak"></div>
+        <div class="right-column" id="wind-speed">
+          <p>Wind speed<br />- <span>m/sec</span></p>
+        </div>
+        <div class="linebreak"></div>
+        <div class="right-column" id="wind-gust">
+          <p>Wind Gusts<br />- <span>m/sec</span></p>
+        </div>
+        <div class="linebreak"></div>
+        <div class="right-column" id="sunset">
+          <p>Sunset<br /></p>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
