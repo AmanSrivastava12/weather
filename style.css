@@ -118,3 +118,59 @@ body {
   height: 260px;
   background-color: #6b9bbd;
 }
+.weather-icon {
+  width: 300px;
+  height: 128px;
+}
+
+.weather-icon img {
+  display: block;
+  margin: 0 auto;
+}
+
+.temperature-value {
+  width: 300px;
+  height: 60px;
+}
+
+.temperature-value p {
+  padding: 0;
+  margin: 0;
+  color: #293251;
+  font-size: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.temperature-value p:hover {
+  color: #ffffff;
+}
+
+#feels-like span,
+#temp-min span,
+#temp-max span,
+#pressure span,
+#humidity span,
+#wind-speed span,
+#wind-gust span {
+  font-size: 20px;
+}
+
+.temperature-value span {
+  color: #293251;
+  font-size: 40px;
+}
+
+.temperature-description p {
+  padding: 10px 10px 0px 10px;
+  margin: 0;
+  color: #293251;
+  text-align: center;
+  font-size: 17.5px;
+}
+
+.location p {
+  color: #293251;
+  text-align: center;
+  font-size: 17.5px;
+}
