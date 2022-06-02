@@ -91,3 +91,66 @@ function getWeather(latitude, longitude) {
       weather.humidity = data.main.humidity;
       weather.sunset = data.sys.sunset;
     })
+
+    .then(function () {
+      sunsetandsunrise();
+      displayWeather();
+    });
+}
+
+function sunsetandsunrise() {
+  let unix = weather.sunrise;
+  let text = new Date(unix * 1000);
+  var timeRegex = /(\d\d):(\d\d):(\d\d)/;
+  weather.sunrise = timeRegex.exec(text)[0];
+  unix = weather.sunset;
+  text = new Date(unix * 1000);
+  weather.sunset = timeRegex.exec(text)[0];
+}
+
+function displayWeather() {
+  iconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
+  tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
+  descElement.innerHTML = weather.description;
+  locationElement.innerHTML = `${weather.city}, ${weather.country}`;
+  feelslikeElement.innerHTML = `Feels like<br>${weather.feelslike}°<span>C</span>`;
+  tempminElement.innerHTML = `Minimum temp.<br>${weather.tempmin}°<span>C</span>`;
+  tempmaxElement.innerHTML = `Maximum temp.<br>${weather.tempmax}°<span>C</span>`;
+  sunriseElement.innerHTML = `Sunrise<br>${weather.sunrise}`;
+  pressureElement.innerHTML = `Pressure<br>${weather.pressure} <span>hPa</span>`;
+  humidityElement.innerHTML = `Humidity<br>${weather.humidity} <span>%</span>`;
+  windspeedElement.innerHTML = `Wind speed<br>${weather.windspeed} <span>m/sec</span>`;
+  windgustElement.innerHTML = `Wind Gusts<br>${weather.windgust} <span>m/sec</span>`;
+  sunsetElement.innerHTML = `Sunset<br>${weather.sunset}`;
+}
+
+function celsiusToFahrenheit(temperature) {
+  return (temperature * 9) / 5 + 32;
+}
+
+tempElement.addEventListener("click", function () {
+  if (weather.temperature.value === undefined) return;
+
+  if (weather.temperature.unit == "celsius") {
+    let fahrenheittemp = celsiusToFahrenheit(weather.temperature.value);
+    let fahrenheitmaxtemp = celsiusToFahrenheit(weather.tempmax);
+    let fahrenheitmintemp = celsiusToFahrenheit(weather.tempmin);
+    let fahrenheitfeelslike = celsiusToFahrenheit(weather.feelslike);
+    fahrenheittemp = Math.floor(fahrenheittemp);
+    fahrenheitmaxtemp = Math.floor(fahrenheitmaxtemp);
+    fahrenheitmintemp = Math.floor(fahrenheitmintemp);
+    fahrenheitfeelslike = Math.floor(fahrenheitfeelslike);
+
+    tempElement.innerHTML = `${fahrenheittemp}°<span>F</span>`;
+    feelslikeElement.innerHTML = `Feels like<br>${fahrenheitfeelslike}°<span>F</span>`;
+    tempminElement.innerHTML = `Minimum temp.<br>${fahrenheitmintemp}°<span>F</span>`;
+    tempmaxElement.innerHTML = `Maximum temp.<br>${fahrenheitmaxtemp}°<span>F</span>`;
+    weather.temperature.unit = "fahrenheit";
+  } else {
+    tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
+    feelslikeElement.innerHTML = `Feels like<br>${weather.feelslike}°<span>C</span>`;
+    tempminElement.innerHTML = `Minimum temp.<br>${weather.tempmin}°<span>C</span>`;
+    tempmaxElement.innerHTML = `Maximum temp.<br>${weather.tempmax}°<span>C</span>`;
+    weather.temperature.unit = "celsius";
+  }
+});
