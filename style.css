@@ -1,7 +1,6 @@
 * {
   font-family: monospace;
 }
-
 body {
   background-color: #293251;
 }
@@ -11,18 +10,13 @@ body {
   background-color: #6b9bbd;
   width: 1000px;
   height: 500px;
-  padding-top: 5px;
-  padding-right: 35px;
-  padding-bottom: 35px;
-  padding-left: 35px;
+  padding: 5px 35px 35px 35px;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  box-shadow: none;
   border-radius: 10px;
 }
-
 .app-title {
   display: inline;
   width: 300px;
@@ -33,21 +27,17 @@ body {
   text-align: center;
   border-radius: 10px 10px 0 0;
 }
-
 #left,
 #right {
+  width: 250px;
   padding-top: 60px;
   display: block;
-  border-collapse: collapse;
 }
-
 .left-column,
 .right-column {
-  width: 250px;
   height: 100px;
   padding: 0;
 }
-
 .left-column p,
 .right-column p,
 .bottom-row p {
@@ -57,33 +47,27 @@ body {
   text-align: center;
   font-size: 30px;
 }
-
 #bottom {
   display: flex;
   margin-top: 30px;
-  border-collapse: collapse;
 }
-
 .bottom-row {
   border-left: 2px solid rgb(255, 255, 255);
   border-right: 2px solid rgb(255, 255, 255);
   width: 300px;
   height: 100px;
 }
-
 .page {
   position: fixed;
   bottom: 0;
   right: 20px;
 }
-
 #clock {
   font-size: 20px;
   display: block;
   color: #293251;
   padding: 0px 0px 0px 0px;
 }
-
 .app-title h3 {
   text-align: center;
   padding-top: 30px;
@@ -92,27 +76,13 @@ body {
   font-size: 1.2em;
   color: #293251;
 }
-
 .linebreak {
   color: #fff;
   background-color: #fff;
+  margin: 0 auto;
   height: 2px;
   width: 100%;
 }
-
-.notification {
-  background-color: #f8d7da;
-  display: none;
-}
-
-.notification p {
-  color: #721c24;
-  font-size: 1.2em;
-  margin: 0;
-  text-align: center;
-  padding: 10px 0;
-}
-
 .weather-container {
   width: 300px;
   height: 260px;
@@ -122,17 +92,14 @@ body {
   width: 300px;
   height: 128px;
 }
-
 .weather-icon img {
   display: block;
   margin: 0 auto;
 }
-
 .temperature-value {
   width: 300px;
   height: 60px;
 }
-
 .temperature-value p {
   padding: 0;
   margin: 0;
@@ -141,26 +108,22 @@ body {
   text-align: center;
   cursor: pointer;
 }
-
 .temperature-value p:hover {
   color: #ffffff;
 }
-
 #feels-like span,
-#temp-min span,
-#temp-max span,
+#visibility span,
+#cloudiness span,
 #pressure span,
 #humidity span,
 #wind-speed span,
 #wind-gust span {
   font-size: 20px;
 }
-
 .temperature-value span {
   color: #293251;
   font-size: 40px;
 }
-
 .temperature-description p {
   padding: 10px 10px 0px 10px;
   margin: 0;
@@ -168,9 +131,19 @@ body {
   text-align: center;
   font-size: 17.5px;
 }
-
 .location p {
   color: #293251;
   text-align: center;
   font-size: 17.5px;
+}
+
+/* responsive */
+@media only screen and (max-width: 1100px) {
+  .container {
+    justify-content: center;
+    width: 700px;
+  }
+  .linebreak {
+    width: 80%;
+  }
 }
