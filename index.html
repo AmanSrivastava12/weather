@@ -23,7 +23,7 @@
     />
     <link rel="manifest" href="./favicon/site.webmanifest" />
   </head>
-  <body>
+  <body onload="initialize()">
     <div class="container">
       <div class="page">
         <span id="clock" title="12-hour format">CLOCK</span>
@@ -34,12 +34,12 @@
           <p>Feels like<br />- °<span>C</span></p>
         </div>
         <div class="linebreak"></div>
-        <div class="left-column" id="temp-min">
-          <p>Minimum temp.<br />- °<span>C</span></p>
+        <div class="left-column" id="visibility">
+          <p>Visibility<br />- °<span>C</span></p>
         </div>
         <div class="linebreak"></div>
-        <div class="left-column" id="temp-max">
-          <p>Maximum temp.<br />- °<span>C</span></p>
+        <div class="left-column" id="cloudiness">
+          <p>Cloudiness<br />- °<span>C</span></p>
         </div>
         <div class="linebreak"></div>
         <div class="left-column" id="sunrise">
@@ -48,7 +48,6 @@
       </div>
       <div class="app-title">
         <h3>WEATHER</h3>
-        <div class="notification"></div>
         <div class="weather-container">
           <div class="weather-icon">
             <img src="icons/unknown.png" alt="" />
@@ -57,7 +56,7 @@
             class="temperature-value"
             title="Click to obtain the temperature in Fahrenheit"
           >
-            <p>- °<span>C</span></p>
+            <p onclick="converter()">- °<span>C</span></p>
           </div>
           <div class="temperature-description">
             <p></p>
